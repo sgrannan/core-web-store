@@ -6,8 +6,8 @@
 
 <div class="text-center">
     <h1 class="display-4">Rainforest</h1>
-    <table>
-        <thead>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
             <tr>
                 <th>
                     Category
@@ -21,25 +21,31 @@
                 <th>
                     Available
                 </th>
+                <th>
+                    Options
+                </th>
             </tr>
         </thead>
         <tbody>
-            @foreach(ItemViewModel i in Model)
+            @foreach (ItemViewModel i in Model)
             {
-            <tr>
-                <td>
-                    @i.ItemCategory
-                </td>
-                <td>
-                    @i.ItemName
-                </td>
-                <td>
-                    @i.ItemDescription
-                </td>
-                <td>
-                   @i.OutOfStock
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @i.ItemCategory
+                    </td>
+                    <td>
+                        @i.ItemName
+                    </td>
+                    <td>
+                        @i.ItemDescription
+                    </td>
+                    <td>
+                        @i.OutOfStock
+                    </td>
+                    <td>
+                        <a href="#" >Add to Cart</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
