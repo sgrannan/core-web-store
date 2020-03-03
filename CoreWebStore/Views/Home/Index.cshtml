@@ -1,7 +1,46 @@
-﻿@{
+﻿@model List<CoreWebStore.Models.ItemViewModel>;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">The Rainforest</h1>
+    <h1 class="display-4">Rainforest</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Item Name
+                </th>
+                <th>
+                    Item Description
+                </th>
+                <th>
+                    Available
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(ItemViewModel i in Model)
+            {
+            <tr>
+                <td>
+                    @i.ItemCategory
+                </td>
+                <td>
+                    @i.ItemName
+                </td>
+                <td>
+                    @i.ItemDescription
+                </td>
+                <td>
+                   @i.OutOfStock
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
 </div>

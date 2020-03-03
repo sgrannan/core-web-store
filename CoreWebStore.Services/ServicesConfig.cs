@@ -11,9 +11,11 @@ namespace CoreWebStore.Services
         private string customerServiceApi;
         private string inventoryServiceApi;
         private string ordersServiceApi;
+        private string customerServiceLogin;
 
         public string CustomerServiceApi { get => customerServiceApi; set => customerServiceApi = value; }
         public string InventoryServiceApi { get => inventoryServiceApi; set => inventoryServiceApi = value; }
         public string OrdersServiceApi { get => ordersServiceApi; set => ordersServiceApi = value; }
+        public string CustomerServiceLogin { get => customerServiceLogin; set => customerServiceLogin = value; }
     }
 }

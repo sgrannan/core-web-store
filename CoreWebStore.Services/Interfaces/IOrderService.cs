@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CoreWebStore.Services.Interfaces
 {
-    public interface IInventoryService
+    public interface IOrderService
     {
-        Task<List<ItemModel>> GetAllItemsAsync();
-        Task<ItemModel> GetByItemId(string itemId);
+        Task<List<OrderModel>> GetCustomerOrders(string customerId);
     }
 }

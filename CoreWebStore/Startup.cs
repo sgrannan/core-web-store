@@ -31,8 +31,10 @@ namespace CoreWebStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<ServicesConfig>(Configuration.GetSection("ServicesConfig"));
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IInventoryService, InventoryService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

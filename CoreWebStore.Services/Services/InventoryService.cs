@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CoreWebStore.Services.Services
 {
@@ -33,6 +34,24 @@ namespace CoreWebStore.Services.Services
             }
 
             return items;
+        }
+
+        public async Task<ItemModel> GetByItemId(string itemId)
+        {
+            ItemModel item = null;
+            string apiUrl = _servicesConfig.InventoryServiceApi.Trim();
+            apiUrl += "/" + itemId;
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(apiUrl))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    item = JsonConvert.DeserializeObject<ItemModel>(apiResponse);
+                }
+            }
+
+            return item;
         }
     }
 }

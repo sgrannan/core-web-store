@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoreWebStore.Services.Interfaces
 {
-    public interface IInventoryService
+    public interface ICustomerService
     {
-        Task<List<ItemModel>> GetAllItemsAsync();
-        Task<ItemModel> GetByItemId(string itemId);
+        Task<UserModel> UserLogin(string username, string password);
+        Task<CustomerModel> GetCustomer(string customerId);
     }
 }

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+    <div class="container w-100">
+        <h2>User Login</h2>
+        <form method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" name="Username" />
+                <input class="form-control" type="text" name="Password" />
+            </div>
+            <button asp-controller="Login" asp-action="Index">Login</button>
+        </form>
+    </div>

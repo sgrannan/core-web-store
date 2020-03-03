@@ -1,0 +1,57 @@
+﻿@model List<CoreWebStore.Models.CustomerOrdersViewModel>;
+
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Profile">My Profile</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="text-center">
+    <h1 class="display-4">My Orders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Item Name
+                </th>
+                <th>
+                    Ordered On
+                </th>
+                <th>
+                    Delivery Date
+                </th>
+                <th>
+                    Item Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CustomerOrdersViewModel m in Model)
+            {
+                <tr>
+                    <td>
+                        @m.OrderItem.ItemName
+                    </td>
+                    <td>
+                        @m.OrderDate
+                    </td>
+                    <td>
+                        @m.EstimatedDeliveryDate
+                    </td>
+                    <td>
+                        @m.OrderItem.ItemDescription
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -9,5 +9,7 @@ namespace CoreWebStore.Services.Interfaces
         string CustomerServiceApi { get; set; }
         string InventoryServiceApi { get; set; }
         string OrdersServiceApi { get; set; }
+
+        string CustomerServiceLogin { get; set; }
     }
 }

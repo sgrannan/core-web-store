@@ -27,7 +27,14 @@ namespace CoreWebStore.Controllers
         {
             List<ItemModel> items = await _inventoryService.GetAllItemsAsync();
 
-            return View(items);
+            List<ItemViewModel> viewModel = new List<ItemViewModel>();
+
+            foreach(ItemModel i in items)
+            {
+                viewModel.Add(new ItemViewModel(i));
+            }
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
